@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitão Barber</title>
+<meta name="description" content="Vitão Barber: cortes, barba e pigmentação. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #1E5BB8;
+    --azul-escuro: #144187;
+    --branco: #F4F4F1;
+    --dourado: #D8B26A;
+    --texto: #1B1F2A;
+    --cinza: #5C6373;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--texto);
+    background: var(--branco);
+    line-height: 1.6;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  a { color: inherit; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* Topo */
+  header {
+    background: var(--azul);
+    color: var(--branco);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  header img { height: 48px; width: auto; }
+  nav a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 20px;
+    opacity: 0.9;
+  }
+  nav a:hover { opacity: 1; text-decoration: underline; }
+
+  /* Hero */
+  .hero {
+    background:
+      linear-gradient(180deg, rgba(30,91,184,0.92) 0%, rgba(30,91,184,0.80) 45%, rgba(30,91,184,0.97) 100%),
+      url("assets/victor.png") center 20% / cover no-repeat;
+    color: var(--branco);
+    padding: 90px 0 100px;
+    text-align: center;
+    position: relative;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 40px;
+    background: var(--branco);
+    clip-path: ellipse(60% 100% at 50% 100%);
+  }
+  .hero img.logo-grande { width: min(420px, 70vw); margin-bottom: 24px; }
+  .hero p {
+    font-size: 18px;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    opacity: 0.95;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--branco);
+    color: var(--azul);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .btn:hover { background: var(--dourado); color: var(--texto); }
+  .btn-outline {
+    background: transparent;
+    color: var(--branco);
+    border: 2px solid var(--branco);
+    margin-left: 12px;
+  }
+  .btn-outline:hover { background: var(--branco); color: var(--azul); }
+
+  section { padding: 72px 0; }
+  .titulo {
+    font-size: 44px;
+    color: var(--azul);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .subtitulo {
+    text-align: center;
+    color: var(--cinza);
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+
+  /* Serviços */
+  .servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .servico {
+    background: #fff;
+    border-top: 4px solid var(--azul);
+    padding: 28px 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .servico h3 { font-size: 26px; color: var(--azul-escuro); margin-bottom: 6px; }
+  .servico p { color: var(--cinza); font-size: 14px; margin-bottom: 16px; }
+  .preco {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--dourado);
+    letter-spacing: 0.03em;
+  }
+  .nota {
+    text-align: center;
+    font-size: 12px;
+    color: var(--cinza);
+    margin-top: 24px;
+  }
+
+  /* Galeria */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .foto {
+    aspect-ratio: 1 / 1;
+    background: var(--azul);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 12px;
+  }
+  .foto:nth-child(even) { background: var(--azul-escuro); }
+  .foto:nth-child(3n) { background: #0F2F63; }
+
+  /* Avaliações */
+  .avaliacoes {
+    background: var(--azul-escuro);
+    color: var(--branco);
+  }
+  .avaliacoes .titulo { color: var(--branco); }
+  .avaliacoes .subtitulo { color: rgba(255,255,255,0.75); }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 24px;
+  }
+  .estrelas { color: var(--dourado); letter-spacing: 3px; margin-bottom: 10px; }
+  .card p { font-size: 14px; margin-bottom: 14px; }
+  .card span { font-size: 12px; opacity: 0.75; }
+  .avaliar {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  /* Contato */
+  .contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .info h3 { font-size: 28px; color: var(--azul); margin-bottom: 8px; }
+  .info p { margin-bottom: 18px; color: var(--texto); }
+  .info small { color: var(--cinza); display: block; margin-top: 2px; }
+  .mapa {
+    background: #fff;
+    border: 2px solid var(--azul);
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .mapa p { color: var(--cinza); margin-bottom: 18px; font-size: 14px; }
+
+  footer {
+    background: var(--azul);
+    color: var(--branco);
+    text-align: center;
+    padding: 28px 0;
+    font-size: 13px;
+  }
+
+  @media (max-width: 760px) {
+    .galeria { grid-template-columns: repeat(2, 1fr); }
+    .contato { grid-template-columns: 1fr; }
+    .titulo { font-size: 36px; }
+    nav a { display: none; }
+    .btn-outline { margin-left: 0; margin-top: 12px; display: block; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="assets/logo.png" alt="Vitão Barber">
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="container">
+    <img class="logo-grande" src="assets/logo.png" alt="Vitão Barber">
+    <p>Corte, barba e pigmentação com atenção a cada detalhe. Agende seu horário em poucos cliques.</p>
+    <a class="btn" href="https://wa.me/553798412082?text=Ol%C3%A1%2C%20quero%20agendar%20um%20hor%C3%A1rio" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    <a class="btn btn-outline" href="#servicos">Ver serviços</a>
+  </div>
+</div>
+
+<section id="servicos">
+  <div class="container">
+    <h2 class="titulo">Serviços</h2>
+    <p class="subtitulo">Valores de exemplo, serão atualizados com a tabela real</p>
+    <div class="servicos">
+      <div class="servico">
+        <h3>Corte masculino</h3>
+        <p>Máquina, tesoura ou degradê, com acabamento na navalha.</p>
+        <div class="preco">R$ 35</div>
+      </div>
+      <div class="servico">
+        <h3>Barba</h3>
+        <p>Desenho, alinhamento e toalha quente.</p>
+        <div class="preco">R$ 25</div>
+      </div>
+      <div class="servico">
+        <h3>Corte + barba</h3>
+        <p>O combo completo para sair renovado.</p>
+        <div class="preco">R$ 55</div>
+      </div>
+      <div class="servico">
+        <h3>Corte e pigmentação</h3>
+        <p>Pigmentação para disfarçar falhas e dar mais densidade.</p>
+        <div class="preco">R$ 50</div>
+      </div>
+    </div>
+    <p class="nota">Pagamento em dinheiro, Pix e cartão. Consulte disponibilidade pelo WhatsApp.</p>
+  </div>
+</section>
+
+<section id="galeria" style="background:#fff">
+  <div class="container">
+    <h2 class="titulo">Galeria</h2>
+    <p class="subtitulo">Espaço para fotos reais de cortes e do ambiente</p>
+    <div class="galeria">
+      <div class="foto">Foto do corte</div>
+      <div class="foto">Foto da barba</div>
+      <div class="foto">Foto do ambiente</div>
+      <div class="foto">Foto do corte</div>
+      <div class="foto">Foto do Victor</div>
+      <div class="foto">Foto da fachada</div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container contato">
+    <div class="info">
+      <h3>Endereço</h3>
+      <p>Rua São Paulo, 377<small>São Gonçalo do Pará, MG</small></p>
+      <h3>Horário</h3>
+      <p>Segunda a sexta: 09h às 19h<small>Sábado: 08h às 16h · Domingo: fechado</small></p>
+      <h3>WhatsApp</h3>
+      <p><a href="https://wa.me/553798412082" target="_blank" rel="noopener">+55 37 9841-2082</a><small>Clique para abrir direto no WhatsApp</small></p>
+    </div>
+    <div class="mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=!4v1793740390807!6m8!1m7!1sDKIHeSdrFqql74GmB_u5iQ!2m2!1d-19.98786330904591!2d-44.84895636965362!3f115.51436508035027!4f-4.733603809871909!5f0.7820865974627469" width="100%" height="320" style="border:0;display:block;margin-bottom:18px" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Localização da Vitão Barber no Google Maps"></iframe>
+      <p style="margin-bottom:14px;color:var(--texto)"><strong>Rua São Paulo, 377</strong><br>São Gonçalo do Pará, MG</p>
+      <p>Use o mapa para ver a localização ou o botão para abrir a rota.</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rua+S%C3%A3o+Paulo+377+S%C3%A3o+Gon%C3%A7alo+do+Par%C3%A1+MG" target="_blank" rel="noopener">Abrir no Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    Vitão Barber · Cortes, barba e pigmentação
+  </div>
+</footer>
+
+</body>
+</html>
