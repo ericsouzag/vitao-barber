@@ -120,7 +120,7 @@
   /* Serviços */
   .servicos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   .servico {
@@ -132,6 +132,7 @@
   .servico h3 { font-size: 26px; color: var(--azul-escuro); margin-bottom: 6px; }
   .servico p { color: var(--cinza); font-size: 14px; margin-bottom: 16px; }
   .preco {
+    white-space: nowrap;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 30px;
     color: var(--dourado);
@@ -221,6 +222,7 @@
     .galeria { grid-template-columns: repeat(2, 1fr); }
     .contato { grid-template-columns: 1fr; }
     .titulo { font-size: 36px; }
+    .servicos { grid-template-columns: 1fr; }
     nav a { display: none; }
     .btn-outline { margin-left: 0; margin-top: 12px; display: block; }
   }
