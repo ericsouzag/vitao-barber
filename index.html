@@ -59,8 +59,8 @@
   /* Hero */
   .hero {
     background:
-      linear-gradient(180deg, rgba(30,91,184,0.92) 0%, rgba(30,91,184,0.80) 45%, rgba(30,91,184,0.97) 100%),
-      url("assets/victor.png") center 20% / cover no-repeat;
+      radial-gradient(ellipse at center, rgba(30,91,184,0.35) 0%, rgba(30,91,184,0.60) 75%),
+      url("assets/fotos/victor-hero.jpg") center 20% / cover no-repeat;
     color: var(--branco);
     padding: 90px 0 100px;
     text-align: center;
@@ -250,45 +250,49 @@
 
 <section id="servicos">
   <div class="container">
-    <h2 class="titulo">Serviços</h2>
-    <p class="subtitulo">Valores de exemplo, serão atualizados com a tabela real</p>
+    <h2 class="titulo">Serviços e valores</h2>
+    <p class="subtitulo">Tabela de preços da barbearia</p>
     <div class="servicos">
       <div class="servico">
-        <h3>Corte masculino</h3>
-        <p>Máquina, tesoura ou degradê, com acabamento na navalha.</p>
-        <div class="preco">R$ 35</div>
+        <h3>Cortes</h3>
+        <p>Corte social, corte comum, tesoura e navalhado.</p>
+        <div class="preco">R$ 30 a R$ 35</div>
+        <p style="margin-top:12px;font-size:13px">Infantil (0 a 3 anos): R$ 35<br>Acabamento pezinho: R$ 10<br>Acabamento na máquina: R$ 5<br>Risquinho: a partir de R$ 5<br>Abaixar com máquina: R$ 10<br>Raspar na máquina: R$ 15<br>Acabamento de máquina: R$ 10<br>Acabamento na navalha: R$ 15</p>
       </div>
       <div class="servico">
         <h3>Barba</h3>
-        <p>Desenho, alinhamento e toalha quente.</p>
-        <div class="preco">R$ 25</div>
+        <p>Barba comum, personalizada ou especial.</p>
+        <div class="preco">R$ 30 a R$ 45</div>
+        <p style="margin-top:12px;font-size:13px">Barba comum: R$ 30<br>Barba personalizada: R$ 35<br>Barba especial: R$ 45</p>
       </div>
       <div class="servico">
-        <h3>Corte + barba</h3>
-        <p>O combo completo para sair renovado.</p>
-        <div class="preco">R$ 55</div>
+        <h3>Sobrancelha e cor</h3>
+        <p>Sobrancelha, camuflagem, pigmentação e luzes.</p>
+        <div class="preco">R$ 10 a R$ 300</div>
+        <p style="margin-top:12px;font-size:13px">Sobrancelha: R$ 10<br>Sobrancelha na pinça: R$ 20<br>Sobrancelha pigmentada: R$ 25<br>Camuflagem (cabelo ou barba): R$ 35<br>Pigmentação: R$ 25<br>Reflexo alinhado: R$ 120<br>Luzes: R$ 120<br>Platinado: R$ 150<br>Nano pigmentação de barba: a partir de R$ 300</p>
       </div>
       <div class="servico">
-        <h3>Corte e pigmentação</h3>
-        <p>Pigmentação para disfarçar falhas e dar mais densidade.</p>
-        <div class="preco">R$ 50</div>
+        <h3>Planos mensais</h3>
+        <p>Para quem corta com frequência.</p>
+        <div class="preco">R$ 85,90 a R$ 159,90</div>
+        <p style="margin-top:12px;font-size:13px">Corte ilimitado: R$ 85,90<br>Barba ilimitada: R$ 85,90<br>Combo supremo: R$ 159,90<br>Combo pai e filho: consulte pelo WhatsApp</p>
       </div>
     </div>
-    <p class="nota">Pagamento em dinheiro, Pix e cartão. Consulte disponibilidade pelo WhatsApp.</p>
+    <p class="nota">Valores sujeitos a alteração. Consulte disponibilidade pelo WhatsApp.</p>
   </div>
 </section>
 
 <section id="galeria" style="background:#fff">
   <div class="container">
     <h2 class="titulo">Galeria</h2>
-    <p class="subtitulo">Espaço para fotos reais de cortes e do ambiente</p>
+    <p class="subtitulo">Cortes realizados na Vitão Barber e a fachada da barbearia</p>
     <div class="galeria">
-      <div class="foto">Foto do corte</div>
-      <div class="foto">Foto da barba</div>
-      <div class="foto">Foto do ambiente</div>
-      <div class="foto">Foto do corte</div>
-      <div class="foto">Foto do Victor</div>
-      <div class="foto">Foto da fachada</div>
+      <img src="assets/fotos/fachada.jpg" alt="Fachada da Vitão Barber" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block">
+      <img src="assets/fotos/corte-1.jpg" alt="Corte masculino" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block">
+      <img src="assets/fotos/corte-2.jpg" alt="Corte infantil" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block">
+      <img src="assets/fotos/corte-3.jpg" alt="Corte masculino" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block">
+      <img src="assets/fotos/corte-4.jpg" alt="Corte masculino" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block">
+      <img src="assets/fotos/corte-5.jpg" alt="Corte masculino" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block">
     </div>
   </div>
 </section>
